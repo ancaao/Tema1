@@ -33,8 +33,8 @@ public:
 };
 
 class Publisher{
-    std::vector<Author> authors;
     std::string name;
+    std::vector<Author> authors;
 
 public:
     void add_author(Author author){
