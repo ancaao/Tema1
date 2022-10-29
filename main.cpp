@@ -78,7 +78,7 @@ public:
     std::string getTitle() const { return title; }
     Genre getGenre() const { return genre; }
 
-    Book(const std::string& title_, const Author author_, const Publisher publisher_,float price_,
+    Book(const std::string& title_, const Author& author_, const Publisher& publisher_,float price_,
          const Genre& genre_, int year_) : title{title_}, author{author_},
                                             publisher{publisher_},
                                             price{price_}, genre{genre_},
@@ -120,7 +120,7 @@ public:
         return new_books;
     }
 
-    void remove_book(std::string title){
+    void remove_book(const std::string& title){
         auto it = find(title);
         if(it != books.end()) books.erase(it);
         else std::cout << "Book not found!\n";
@@ -160,7 +160,7 @@ int main() {
     l.find("Ion");
 
     std::vector<Book> Fiction_books = l.filter_by_genre(Genre::Fiction);
-    for (Book& book: Fiction_books) std::cout << book <<" ";
+    for (const Book& book: Fiction_books) std::cout << book <<" ";
 
     l.remove_book("Ion");
     l.remove_book("Iona");
