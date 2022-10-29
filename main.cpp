@@ -151,8 +151,8 @@ int main() {
     std::cout << nemira;
 
 
-    Book b1("Luceafarul", eminescu, nemira, 25.3, Genre::Poetry, 1987);
-    Book b2("Ion", braniste, nemira, 25.3, Genre::Fiction, 1987);
+    Book b1("Luceafarul", eminescu, nemira, 25.3f, Genre::Poetry, 1987);
+    Book b2("Ion", braniste, nemira, 25.3f, Genre::Fiction, 1987);
 
 
     Library l("lalala", {b1});
